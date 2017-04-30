@@ -1763,14 +1763,14 @@ In the ``{{ perms }}`` object, single-attribute lookup is a proxy to
 This example would display ``True`` if the logged-in user had any permissions
 in the ``foo`` app::
 
-    {{ perms.foo }}
+    {% if perms.foo %}
 
 Two-level-attribute lookup is a proxy to
 :meth:`User.has_perm <django.contrib.auth.models.User.has_perm>`. This example
 would display ``True`` if the logged-in user had the permission
 ``foo.can_vote``::
 
-    {{ perms.foo.can_vote }}
+    {% if perms.foo.can_vote %}
 
 Thus, you can check permissions in template ``{% if %}`` statements:
 
